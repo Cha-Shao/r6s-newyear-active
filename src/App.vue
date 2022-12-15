@@ -20,7 +20,11 @@ const eliminateList: any = ref({
 const roundNumber: Ref<number> = ref(1)
 
 const shuffleMembers = () => {
-  rankList.value[`round${roundNumber.value}`] = lodash.shuffle(rankList.value[`round${roundNumber.value}`])
+  for (let index = 0; index < 5; index++) {
+    setTimeout(() => {
+      rankList.value[`round${roundNumber.value}`] = lodash.shuffle(rankList.value[`round${roundNumber.value}`])
+    }, 100 * (index + 1));
+  }
 }
 
 const eliminateMember = (number: number) => {
@@ -63,7 +67,8 @@ const nextRound = () => {
             <!-- 分round -->
             <div flex flex-wrap justify-center mb-4>
               <div w-32 ma-2 mr-6 bg="white op-50" flex flex-wrap items-center justify-center>
-                <p text-5xl font-bold>{{ k.toString().charAt(5) }}</p>
+                <p v-if="roundData.length != 1" text-5xl font-bold>{{ k.toString().charAt(5) }}</p>
+                <img v-else src="/icon/victory.png" alt="Victory" w="50%">
               </div>
               <!-- 分chunk -->
               <div flex flex-wrap v-for="(rowData, i) in lodash.chunk(roundData, 2)" :key="i" mx-6>

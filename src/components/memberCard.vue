@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<{
     ma-2
     :class="[
       props.eliminated ?
-      'filter-grayscale' :
+      'filter-grayscale brightness-50' :
       `hover:bg-tint
       hover:scale-125
       hover:transition-200
