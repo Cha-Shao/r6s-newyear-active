@@ -12,13 +12,13 @@ const props = withDefaults(defineProps<{
 
 <template>
   <div
-    h-200
+    h-180
     b-b-8
     b-transparent
     relative
     :class="[
       props.disabled ?
-        'filter-grayscale brightness-50'
+        'filter-grayscale op-50'
       : `hover:scale-110
         hover:transition-200
         hover:z-2
@@ -30,6 +30,7 @@ const props = withDefaults(defineProps<{
     <p text-2xl absolute left-5 top-3 z-2>禁用地图</p>
     <p text-4xl absolute left-5 top-10 z-2>{{props.name}}</p>
     <div
+      v-if="!props.disabled"
       absolute
       w-full
       h-full
@@ -49,5 +50,8 @@ const props = withDefaults(defineProps<{
         to-tint
       "
     />
+    <div v-if="props.disabled" absolute w-full bg-gray-500 h-12 bottom-48 text-center>
+      <img src="/icon/disabled.png" alt="Disabled" w-16 translate-y--2>
+    </div>
   </div>
 </template>

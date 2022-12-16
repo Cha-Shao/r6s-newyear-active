@@ -36,7 +36,7 @@ const viewPage: Ref<boolean> = ref(false)
         <div w-full shrink-0>
           <RankList />
         </div>
-        <div w-100vw shrink-0>
+        <div w-full shrink-0>
           <RollMap />
         </div>
       </div>
