@@ -76,7 +76,7 @@ const nextRound = () => {
           <div flex flex-wrap v-for="(rowData, i) in lodash.chunk(roundData, 2)" :key="i" mx-6 relative>
             <TransitionGroup name="fade">
               <!-- 分card -->
-              <memberCard v-for="(cardData, j) in rowData" :key="cardData" :name="cardData.name"
+              <memberCard v-for="(cardData, j) in rowData" :key="cardData" :name="cardData.name" z-2
                 :avatar="cardData.avatar" @click="eliminateMember(i * 2 + j + 1)" :is-attacker="(i * 2 + j + 1) % 2 > 0"
                 :eliminated="eliminateList[k].indexOf(i * 2 + j + 1) > -1" />
             </TransitionGroup>

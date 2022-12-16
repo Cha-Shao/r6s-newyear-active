@@ -12,13 +12,17 @@ const publicMaps: Ref<any> = ref(lodash.chunk(mapsData, 5)[0])
 const disabledMaps: Ref<number[]> = ref([])
 const activeMaps: Ref<number[]> = ref([0, 1, 2, 3, 4])
 const choosedMap: Ref<number | null> = ref(null)
-// 随机地图
+// 洗牌
 const shuffleMaps = () => {
   // 重置禁用和活动地图
   disabledMaps.value = []
   activeMaps.value = [0, 1, 2, 3, 4]
   choosedMap.value = null
-  publicMaps.value = lodash.chunk(lodash.shuffle(mapsData), 5)[0]
+  // 这个timeout会让在选择地图之后按洗牌的观感更好
+  // 不然看着好像没洗牌
+  setTimeout(() => {
+    publicMaps.value = lodash.chunk(lodash.shuffle(mapsData), 5)[0]
+  }, 450);
 }
 // 禁用地图
 const disableMap = (number: number) => {
