@@ -4,7 +4,6 @@
 
 <template>
   <div
-    ma-4
     hover="
     bg-tint
       scale-125
@@ -16,7 +15,6 @@
     bg="white op-50"
     pa="4"
     pb="2"
-    w="70"
     b="b-8 transparent"
     >
     <p

@@ -30,7 +30,7 @@ const props = withDefaults(defineProps<{
     b="b-8 transparent"
     relative
   >
-    <img :src="props.avatar" alt="Avatar" w="full">
+    <img :src="`/avatar/${props.avatar}`" alt="Avatar" w="full">
     <p text="2xl" mt="2">{{props.name}}</p>
     <img
       absolute
