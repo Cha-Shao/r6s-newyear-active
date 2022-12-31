@@ -6,7 +6,7 @@ import type { Ref } from "vue";
 import memberCard from './MemberCard.vue'
 import RButton from './RButton.vue';
 
-import membersData from '../datas/membersData';
+import membersData from '../datas/membersData.json';
 import ScoreBoard from './ScoreBoard.vue';
 
 // 初始化计分板
@@ -74,13 +74,24 @@ const nextRound = () => {
           </div>
           <!-- 分chunk -->
           <div flex flex-wrap v-for="(rowData, i) in lodash.chunk(roundData, 2)" :key="i" mx-6 relative>
-            <TransitionGroup name="fade">
-              <!-- 分card -->
-              <memberCard v-for="(cardData, j) in rowData" :key="cardData" :name="cardData.name" z-2
+            <div flex v-if="rowData.length == 2">
+              <TransitionGroup name="fade">
+                <!-- 分card -->
+                <memberCard v-for="(cardData, j) in rowData" :key="cardData" :name="cardData.name" z-2
+                  :avatar="cardData.avatar" @click="eliminateMember(i * 2 + j + 1)"
+                  :is-attacker="(i * 2 + j + 1) % 2 > 0" :eliminated="eliminateList[k].indexOf(i * 2 + j + 1) > -1" />
+              </TransitionGroup>
+              <ScoreBoard v-if="roundData.length != 1" absolute bottom--16 left="50%" transform="translate-x--50%" />
+            </div>
+            <div v-else>
+              <memberCard
+                z-2
+                v-for="(cardData, j) in rowData" :key="cardData"
+                wait
+                :name="cardData.name"
                 :avatar="cardData.avatar" @click="eliminateMember(i * 2 + j + 1)" :is-attacker="(i * 2 + j + 1) % 2 > 0"
                 :eliminated="eliminateList[k].indexOf(i * 2 + j + 1) > -1" />
-            </TransitionGroup>
-            <ScoreBoard v-if="roundData.length != 1" absolute bottom--16 left="50%" transform="translate-x--50%"/>
+            </div>
           </div>
         </div>
       </div>

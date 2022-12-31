@@ -4,6 +4,7 @@ const props = withDefaults(defineProps<{
   avatar: string
   isAttacker: boolean
   eliminated?: boolean
+  wait?: boolean
 }>(), {
   eliminated: false,
 })
@@ -31,19 +32,20 @@ const props = withDefaults(defineProps<{
     relative
   >
     <img :src="`/avatar/${props.avatar}`" alt="Avatar" w="full">
-    <p text="2xl" mt="2">{{props.name}}</p>
+    <p text="2xl" mt="2" overflow-x-hidden>{{props.name}}</p>
     <img
       absolute
       bottom="-5"
       left="50%"
       translate-x="-50%"
       :src="props.eliminated ?
-              '/icon/dead.png'
-            :
-              props.isAttacker ?
-                '/icon/attacker.png'
-              :
-                '/icon/defender.png'"
+              '/icon/dead.png' :
+              props.wait ?
+              '/icon/wait.png' :
+                props.isAttacker ?
+                  '/icon/attacker.png' :
+                  '/icon/defender.png'
+      "
       alt="Type"
     >
   </div>
