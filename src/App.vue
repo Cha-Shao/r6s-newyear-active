@@ -26,7 +26,7 @@ const viewPage: Ref<boolean> = ref(false)
           <RankList />
         </div>
         <div w-full shrink-0>
-          <RollMap />
+          <RollMap :hide-map-pool="viewPage"/>
         </div>
       </div>
     </div>

@@ -8,6 +8,10 @@ import RButton from './RButton.vue';
 import mapsData from '../datas/mapsData'
 import MapCard from './MapCard.vue';
 
+const props = defineProps<{
+  hideMapPool?: boolean
+}>()
+
 const publicMaps: Ref<any> = ref(lodash.chunk(mapsData, 5)[0])
 const disabledMaps: Ref<number[]> = ref([])
 const activeMaps: Ref<number[]> = ref([0, 1, 2, 3, 4])
@@ -71,7 +75,7 @@ const chooseMap = () => {
     </div>
     <RButton w-70 ma-4 @click="shuffleMaps()">洗牌</RButton>
     <RButton w-70 ma-4 @click="chooseMap()">选择地图</RButton>
-    <div w-fit mx-auto py-20>
+    <div w-fit mx-auto py-20 v-show="props.hideMapPool">
       <p text-4xl text-white mb-6>地图池</p>
       <div grid grid-cols-3 gap-4 mx-auto>
         <div v-for="(data, i) in mapsData" :key="i" relative w-80 h-45 brightness-70 hover:brightness-100 transition-200
