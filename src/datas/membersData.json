@@ -1,49 +1,16 @@
-[{
-  "name": "叉烧",
-  "avatar": "cs.jpg"
-}, {
-  "name": "霸王龙",
-  "avatar": "bwl.jpg"
-}, {
-  "name": "沐月",
-  "avatar": "my.jpg"
-}, {
-  "name": "咸鱼",
-  "avatar": "fish.jpg"
-}, {
-  "name": "干净如风",
-  "avatar": "rufeng.jpg"
-}, {
-  "name": "风叶",
-  "avatar": "fengye.jpg"
-}, {
-  "name": "栖淼",
-  "avatar": "ximiao.jpg"
-}, {
-  "name": "鑫宇",
-  "avatar": "xinyu.jpg"
-}, {
-  "name": "伊",
-  "avatar": "dy.jpg"
-}, {
-  "name": "仓良",
-  "avatar": "cl.jpg"
-}, {
-  "name": "三儿",
-  "avatar": "ser.jpg"
-}, {
-  "name": "卢少",
-  "avatar": "ls.jpg"
-}, {
-  "name": "柒",
-  "avatar": "q.jpg"
-}, {
-  "name": "刀都不及他心冷",
-  "avatar": "ddbjtxl.jpg"
-}, {
-  "name": "尹",
-  "avatar": "y.jpg"
-}, {
-  "name": "BLUEAURORAMAX",
-  "avatar": "blue.jpg"
-}]
+[
+  { "name": "霸王龙", "avatar": "bwl.jpg" },
+  { "name": "沐月", "avatar": "my.jpg" },
+  { "name": "叉烧", "avatar": "cs.jpg" },
+  { "name": "干净如风", "avatar": "rufeng.jpg" },
+  { "name": "仓良", "avatar": "cl.jpg" },
+  { "name": "tk教主", "avatar": "tk.jpg " },
+  { "name": "咸鱼", "avatar": "fish.jpg" },
+  { "name": "柒", "avatar": "q.jpg" },
+  { "name": "BLUEAURORAMAX", "avatar": "blue.jpg " },
+  { "name": "伊", "avatar": "dy.jpg" },
+  { "name": "风叶", "avatar": "fengye.jpg" },
+  { "name": "Pac198964", "avatar": "Pac.jpg" },
+  { "name": "栖淼", "avatar": "ximiao.jpg" },
+  { "name": "老王", "avatar": "beili.jpg" }
+]

@@ -1,7 +1,4 @@
 export default [{
-  cover: 'R6-maps-stadiumbravo.jpg',
-  name: 'B号竞技场'
-}, {
   cover: 'R6-maps-emeraldplains.jpg',
   name: '翡翠原'
 }, {
